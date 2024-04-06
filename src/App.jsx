@@ -1,11 +1,11 @@
 import React from "react";
-import Index from "./Index";
+import PasswordGenerator from "./PasswordGenerator";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Index />
+        <PasswordGenerator />
       </header>
     </div>
   );
