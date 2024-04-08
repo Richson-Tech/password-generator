@@ -1,4 +1,3 @@
-
 export const generatePassword = (fullName, dob) => {
   // Extract initials from full name
   const initials = fullName
@@ -15,8 +14,11 @@ export const generatePassword = (fullName, dob) => {
   // Ensure the password is at least 8 characters
   const minLength = 8;
   while (password.length < minLength) {
-    const additionalCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const randomCharacter = additionalCharacters.charAt(Math.floor(Math.random() * additionalCharacters.length));
+    const additionalCharacters =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const randomCharacter = additionalCharacters.charAt(
+      Math.floor(Math.random() * additionalCharacters.length)
+    );
     password += randomCharacter;
   }
 
