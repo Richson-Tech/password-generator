@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+function PasswordGenerator() {
   const [password, setPassword] = useState("");
 
   const generatePassword = () => {
