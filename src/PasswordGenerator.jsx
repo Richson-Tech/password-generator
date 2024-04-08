@@ -9,7 +9,7 @@ function PasswordGenerator() {
     const charset =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
     let newPassword = "";
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < lenght; i++) {
       const randomIndex = Math.floor(Math.random() * charset.length);
       newPassword += charset[randomIndex];
     }
