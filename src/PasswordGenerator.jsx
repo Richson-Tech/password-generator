@@ -1,28 +1,37 @@
 import React, { useState } from "react";
+import "./App.css";
 
-function PasswordGenerator() {
+function App() {
   const [password, setPassword] = useState("");
-  const [length, setLength] = useState(8); // Default length
 
-  const handleGeneratePassword = () => {
-    const newPassword = generatePassword(length); // Call your password generation function
+  const generatePassword = () => {
+    const charset =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
+    let newPassword = "";
+    for (let i = 0; i < 12; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      newPassword += charset[randomIndex];
+    }
     setPassword(newPassword);
   };
 
   return (
-    <div>
-      <label>Password Length:</label>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-3xl font-bold mb-8">Password Generator</h1>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
+        onClick={generatePassword}
+      >
+        Generate Password
+      </button>
       <input
-        type="number"
-        value={length}
-        onChange={(e) => setLength(parseInt(e.target.value))}
+        type="text"
+        value={password}
+        readOnly
+        className="border border-gray-400 px-4 py-2 rounded text-center w-64"
       />
-      <button onClick={handleGeneratePassword}>Generate Password</button>
-      <br />
-      <label>Generated Password:</label>
-      <input type="text" value={password} readOnly />
     </div>
   );
 }
 
-export default PasswordGenerator;
+export default App;
