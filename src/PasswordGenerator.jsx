@@ -5,6 +5,7 @@ function PasswordGenerator() {
   const [password, setPassword] = useState("");
 
   const generatePassword = () => {
+    const lenght = 12;
     const charset =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
     let newPassword = "";
