@@ -1,3 +1,4 @@
+
 export const generatePassword = (fullName, dob) => {
   // Extract initials from full name
   const initials = fullName
@@ -7,10 +8,9 @@ export const generatePassword = (fullName, dob) => {
 
   // Extract year from date of birth
   const year = dob.split("-")[0];
-  let randomYear = Math.floor(Math.random() * (new Date().getFullYear() - 1950)) + 1950; // Generate a random year between 1950 and current year
 
-  // Generate password based on initials and random year
-  let password = initials.toUpperCase() + randomYear;
+  // Generate password based on initials and year
+  let password = initials.toUpperCase() + year;
 
   // Ensure the password is at least 8 characters
   const minLength = 8;
@@ -22,4 +22,3 @@ export const generatePassword = (fullName, dob) => {
 
   return password;
 };
-
